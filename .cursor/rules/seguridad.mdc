@@ -1,0 +1,21 @@
+---
+description: Controles de seguridad obligatorios del proyecto Resortes Colima
+alwaysApply: true
+---
+
+# Seguridad — Resortes Colima
+
+Cuando haya código o infra:
+
+- **HTTPS** siempre.
+- **Rate limit** en endpoints públicos y de auth.
+- **Hash** de passwords (nunca plaintext).
+- **Cookies de sesión** protegidas (HttpOnly, Secure, SameSite).
+- **Validar inputs**; evitar manipulación de campos.
+- **Restringir acceso** a registros (authz fail-closed).
+- **Cifrar** datos sensibles en reposo cuando aplique.
+- **RLS** / políticas de fila en la base si el stack lo soporta.
+- **Clave pública** de cliente donde corresponda; secretos y service keys fuera del repo.
+- **No** commitear `.env`, API keys ni credenciales.
+
+Ante duda de acceso: **denegar**. Coordinar con departamento Seguridad (`gerente-seguridad`).
